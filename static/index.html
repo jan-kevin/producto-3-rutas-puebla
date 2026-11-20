@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rutas Puebla</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>🚍 Rutas Puebla</h1>
+            <p>Directorio de paradas de transporte público</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Administración de paradas</h2>
+            <p>
+                Consulta, registra y administra las paradas
+                de transporte público de Puebla.
+            </p>
+        </section>
+
+        <section class="panel">
+
+            <h2>Registrar nueva parada</h2>
+
+            <form id="parada-form">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre de la parada</label>
+                        <input type="text" id="nombre" required maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colonia">Colonia</label>
+                        <input type="text" id="colonia" required maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="municipio">Municipio</label>
+                        <input type="text" id="municipio" value="Puebla" maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="latitud">Latitud</label>
+                        <input type="number" id="latitud" step="any" min="-90" max="90" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="longitud">Longitud</label>
+                        <input type="number" id="longitud" step="any" min="-180" max="180" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rutas">Rutas de transporte</label>
+                        <input type="text" id="rutas" placeholder="Ej. Ruta 10, Ruta 72">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activa">Estado de la parada</label>
+                        <select id="activa">
+                            <option value="true" selected>Activa</option>
+                            <option value="false">Inactiva</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Registrar parada
+                </button>
+
+            </form>
+
+            <p id="mensaje"></p>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Paradas registradas</h2>
+
+            <div id="lista-paradas">
+                <p>Cargando paradas...</p>
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Mapa de paradas</h2>
+
+            <div id="mapa"></div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Rutas Puebla — Proyecto Sprint 1</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>
